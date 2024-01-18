@@ -10,10 +10,9 @@ const { PORT } = process.env;
 const server = express();
 //Iniciamos servidor express en puerto 3000
 server.use(express.json());
+//Aplicamos middlware para consumir rutas de la api.
 server.use("/", routesApi)
-server.get("/", (req: Request, res: Response) => {
-  res.send("Primera ruta");
-});
+
 
 server.listen(PORT, () => {
   console.log(`Servidor iniciando en el puerto ${PORT ?? 3000}`);
